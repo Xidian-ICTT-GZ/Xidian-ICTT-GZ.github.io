@@ -30,7 +30,7 @@ a:focus-visible, .menu-trigger:focus-visible { outline:3px solid #d89c4b; outlin
 .our-portfolio .section-heading img { border-radius:6px; margin-top:12px; }
 .portfolio-item { border:1px solid var(--line); border-radius:8px; overflow:hidden; box-shadow:0 8px 30px rgba(25,55,70,.06); background:#fff; }
 .portfolio-item .thumb { background:#f2f6f6; }
-.portfolio-item .thumb img { width:100%; height:auto; aspect-ratio:1 / 1; object-fit:contain; object-position:center; }
+.portfolio-item .thumb img { width:100%; height:240px; object-fit:contain; object-position:center; }
 .portfolio-item .down-content { padding:18px 20px!important; }
 .portfolio-item .down-content h4 { color:var(--navy); }
 .services .naccs { margin-top:20px; }
@@ -139,3 +139,90 @@ footer p { color:#dfeaec; }
   .contact-us .fill-form .icon img { width:38px; }
   .contact-us .fill-form .icon a { font-size:12px; line-height:1.4; overflow-wrap:anywhere; }
 }
+
+/* Each cohort shares a rotating research showcase. */
+#students .student-heading { text-align:center; }
+#students .student-heading .line-dec { margin:0 auto; }
+.cohort { margin:40px 0 64px; }
+.cohort > h3 { color:var(--navy); font-size:23px; }
+.cohort-hint { color:var(--muted); font-size:13px; margin:8px 0 16px; }
+.cohort-slides { display:grid; border:1px solid var(--line); border-radius:10px; background:#f5f8f9; overflow:hidden; }
+.cohort-slide { grid-area:1 / 1; display:grid; grid-template-columns:200px minmax(0,1fr); gap:28px; align-items:start; padding:28px; opacity:0; visibility:hidden; animation-timing-function:steps(1,end); animation-iteration-count:infinite; }
+.cohort-slides:hover .cohort-slide, .cohort-slides:focus-within .cohort-slide { animation-play-state:paused; }
+.cohort-person img { width:100%; height:auto; border-radius:6px; }
+.cohort-person h4 { color:var(--navy); margin-top:12px; font-size:21px; }
+.cohort-person p { color:var(--muted); margin-top:4px; }
+.cohort-results h4 { color:var(--navy); font-size:18px; margin:0 0 12px; }
+.cohort-results ul { padding-left:20px; margin:0; }
+.cohort-results li { list-style:decimal; margin:0 0 8px; color:var(--ink); line-height:1.6; overflow-wrap:anywhere; }
+.cohort-results a { color:var(--blue); }
+.cohort-results a:hover { text-decoration:underline; }
+@media(max-width:600px) { .cohort-slide { grid-template-columns:88px minmax(0,1fr); gap:14px; padding:16px; } .cohort-person h4 { font-size:17px; } .cohort-person p { font-size:12px; } .cohort-results li { font-size:13px; } }
+@media(prefers-reduced-motion:reduce) { .cohort-slides { display:block; } .cohort-slide { opacity:1!important; visibility:visible!important; animation:none!important; border-bottom:1px solid var(--line); } }
+@keyframes cohort-2024-rotation { 0% { opacity:1; visibility:visible; } 9.090909% { opacity:0; visibility:hidden; } 100% { opacity:0; visibility:hidden; } }
+.cohort-2024 .cohort-slide { animation-name:cohort-2024-rotation; animation-duration:33s; }
+@keyframes cohort-2025-rotation { 0% { opacity:1; visibility:visible; } 9.090909% { opacity:0; visibility:hidden; } 100% { opacity:0; visibility:hidden; } }
+.cohort-2025 .cohort-slide { animation-name:cohort-2025-rotation; animation-duration:33s; }
+@keyframes cohort-2026-rotation { 0% { opacity:1; visibility:visible; } 16.666667% { opacity:0; visibility:hidden; } 100% { opacity:0; visibility:hidden; } }
+.cohort-2026 .cohort-slide { animation-name:cohort-2026-rotation; animation-duration:18s; }
+
+/* Select a student without a script; resetting resumes rotation. */
+.cohort-choices { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 16px; }
+.cohort-choices input { position:absolute; width:1px; height:1px; opacity:0; }
+.cohort-choices label, .cohort-choices button { display:inline-block; border:1px solid var(--line); border-radius:6px; background:#fff; padding:6px 10px; color:var(--navy); font-size:14px; cursor:pointer; }
+.cohort-choices input:checked + label { background:var(--blue); border-color:var(--blue); color:white; }
+.cohort-choices input:focus-visible + label, .cohort-choices button:focus-visible { outline:3px solid #d89c4b; outline-offset:2px; }
+.cohort:has(.cohort-choices input:checked) .cohort-slide { animation:none !important; opacity:0 !important; visibility:hidden !important; }
+.cohort-person img { display:block; width:100%; max-height:240px; object-fit:contain; object-position:top; }
+@media(max-width:600px) { .cohort-slide { grid-template-columns:110px minmax(0,1fr); } .cohort-person img { max-height:none; } }
+@media(prefers-reduced-motion:reduce) { .cohort:has(.cohort-choices input:checked) .cohort-slides { display:grid; } }
+.cohort:has(#cohort-2024-0:checked) .cohort-slide:nth-child(1) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2024-1:checked) .cohort-slide:nth-child(2) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2024-2:checked) .cohort-slide:nth-child(3) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2024-3:checked) .cohort-slide:nth-child(4) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2024-4:checked) .cohort-slide:nth-child(5) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2024-5:checked) .cohort-slide:nth-child(6) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2024-6:checked) .cohort-slide:nth-child(7) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2024-7:checked) .cohort-slide:nth-child(8) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2024-8:checked) .cohort-slide:nth-child(9) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2024-9:checked) .cohort-slide:nth-child(10) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2024-10:checked) .cohort-slide:nth-child(11) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2025-0:checked) .cohort-slide:nth-child(1) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2025-1:checked) .cohort-slide:nth-child(2) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2025-2:checked) .cohort-slide:nth-child(3) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2025-3:checked) .cohort-slide:nth-child(4) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2025-4:checked) .cohort-slide:nth-child(5) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2025-5:checked) .cohort-slide:nth-child(6) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2025-6:checked) .cohort-slide:nth-child(7) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2025-7:checked) .cohort-slide:nth-child(8) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2025-8:checked) .cohort-slide:nth-child(9) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2025-9:checked) .cohort-slide:nth-child(10) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2025-10:checked) .cohort-slide:nth-child(11) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2026-0:checked) .cohort-slide:nth-child(1) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2026-1:checked) .cohort-slide:nth-child(2) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2026-2:checked) .cohort-slide:nth-child(3) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2026-3:checked) .cohort-slide:nth-child(4) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2026-4:checked) .cohort-slide:nth-child(5) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2026-5:checked) .cohort-slide:nth-child(6) { opacity:1 !important; visibility:visible !important; }
+/* On desktop, keep faculty portraits taller than they are wide. */
+@media (min-width:992px) {
+  .our-portfolio .portfolio-item .thumb img { height:auto; aspect-ratio:4 / 5; object-fit:cover; object-position:center top; }
+}
+/* Faculty portraits on the team page use the same vertical proportions as the homepage. */
+#people .show-up > .col-lg-12 > .row img {
+  width:100%;
+  height:auto;
+  aspect-ratio:4 / 5;
+  max-height:none;
+  object-fit:cover;
+  object-position:center top;
+}
+
+@keyframes cohort-alumni-rotation { 0% { opacity:1; visibility:visible; } 50% { opacity:0; visibility:hidden; } 100% { opacity:0; visibility:hidden; } }
+.cohort-alumni .cohort-slide { animation-name:cohort-alumni-rotation; animation-duration:6s; }
+.cohort:has(#cohort-alumni-0:checked) .cohort-slide:nth-child(1),
+.cohort:has(#cohort-alumni-1:checked) .cohort-slide:nth-child(2) { opacity:1 !important; visibility:visible !important; }
+
+.cohort-results h5 { color:var(--navy); font-size:15px; margin:16px 0 8px; }
+.cohort-results ol { padding-left:20px; margin:0; }
+.cohort-results .publication-meta { display:block; color:var(--muted); font-size:13px; margin-top:3px; }
