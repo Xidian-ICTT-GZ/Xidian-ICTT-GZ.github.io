@@ -6,7 +6,7 @@
   var cards = Array.prototype.map.call(section.querySelectorAll('.blog-post'), function (card) {
     return card.parentElement;
   });
-  var pageSize = 5;
+  var pageSize = 15;
   var pageCount = Math.ceil(cards.length / pageSize);
   if (pageCount <= 1) return;
 
