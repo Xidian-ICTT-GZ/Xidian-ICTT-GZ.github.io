@@ -233,3 +233,19 @@ footer p { color:#dfeaec; }
 .cohort:has(#cohort-2026-9:checked) .cohort-slide:nth-child(10) { opacity:1 !important; visibility:visible !important; }
 .cohort:has(#cohort-2026-10:checked) .cohort-slide:nth-child(11) { opacity:1 !important; visibility:visible !important; }
 .cohort:has(#cohort-2026-11:checked) .cohort-slide:nth-child(12) { opacity:1 !important; visibility:visible !important; }
+
+@keyframes cohort-2027-rotation { 0% { opacity:1; visibility:visible; } 12.500000% { opacity:0; visibility:hidden; } 100% { opacity:0; visibility:hidden; } }
+.cohort-2027 .cohort-slide { animation-name:cohort-2027-rotation; animation-duration:24s; }
+.cohort:has(#cohort-2027-0:checked) .cohort-slide:nth-child(1) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2027-1:checked) .cohort-slide:nth-child(2) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2027-2:checked) .cohort-slide:nth-child(3) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2027-3:checked) .cohort-slide:nth-child(4) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2027-4:checked) .cohort-slide:nth-child(5) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2027-5:checked) .cohort-slide:nth-child(6) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2027-6:checked) .cohort-slide:nth-child(7) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-2027-7:checked) .cohort-slide:nth-child(8) { opacity:1 !important; visibility:visible !important; }
+
+@keyframes cohort-undergrad-rotation { 0% { opacity:1; visibility:visible; } 50.000000% { opacity:0; visibility:hidden; } 100% { opacity:0; visibility:hidden; } }
+.cohort-undergrad .cohort-slide { animation-name:cohort-undergrad-rotation; animation-duration:6s; }
+.cohort:has(#cohort-undergrad-0:checked) .cohort-slide:nth-child(1) { opacity:1 !important; visibility:visible !important; }
+.cohort:has(#cohort-undergrad-1:checked) .cohort-slide:nth-child(2) { opacity:1 !important; visibility:visible !important; }
