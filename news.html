@@ -32,7 +32,8 @@
                 <!-- ***** Menu Start ***** -->
                 <ul class="nav">
                   <li class="scroll-to-section"><a href="index.html">首页</a></li>
-                  <li class="scroll-to-section"><a href="people.html">团队成员</a></li>
+                  <li class="scroll-to-section"><a href="people.html">师资队伍</a></li>
+                  <li class="scroll-to-section"><a href="students.html">学生成员</a></li>
                   <li class="scroll-to-section"><a href="publication.html">科研成果</a></li>
                   <li class="scroll-to-section"><a href="news.html" class="active">新闻动态</a></li>
                   <li class="scroll-to-section"><a href="contact.html">联系我们</a></li>
@@ -46,7 +47,7 @@
         </div>
       </header><!-- ***** Header Area End ***** -->
 
-      
+
       <div id="blog" class="blog">
         <div class="container">
           <div class="row">
@@ -55,6 +56,31 @@
                 <h6>News</h6>
                 <h4>新闻动态</h4>
                 <div class="line-dec"></div>
+              </div>
+            </div>
+
+            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+              <div class="blog-post">
+                <div class="thumb">
+                  <a href="https://doi.org/10.1145/3799682.3840020" target="_blank" rel="noopener noreferrer">
+                    <img src="./imgs/news/20261111意大利罗马CIKM会议.png" alt="张祥昀同学在罗马 CIKM 2026 会议参加论文海报展示" />
+                  </a>
+                </div>
+                <div class="down-content">
+                  <span class="category">学术交流</span>
+                  <span class="date">November 11, 2026</span>
+                  <h4>张祥昀同学赴意大利罗马参加 CIKM 2026，展示课题组在 SQL 查询优化方面的研究成果</h4>
+                  <p>
+                    2026年11月7日至11日，第35届 ACM 信息与知识管理国际会议（CIKM 2026）在意大利罗马举行。11月11日下午，西安电子科技大学广州研究院未来软件新技术实验室张祥昀同学在大会海报交流环节展示了课题组的短篇研究论文《Conservative Hybrid SQL Rewriting with Rules, Retrieval, and LLM Reasoning》。
+                  </p>
+                  <p>
+                    如何让一条 SQL 查询运行得更快，同时保持查询结果一致？例如，合并重复的统计操作可以节省执行时间，但如果改写时忽略了空值或重复记录，最终得到的数字就可能发生变化。针对这一问题，课题组先用确定性规则生成改写方案，再检索相似案例，引导大语言模型对查询作局部调整。系统检查改写涉及的表和字段，并在测试数据上比较执行结果。模型的建议通过检查后才会被采用，否则沿用规则生成的方案。团队在 PostgreSQL 15 上评估了30个常规查询和20个涉及外连接、嵌套查询、深分页等情况的复杂查询。在常规查询中，固定规则已经能够取得大部分性能收益。对于更依赖上下文判断的20个复杂查询，以原始 SQL 为基准，仅用规则改写的整体加速比为1.11倍，结合案例检索、大模型改写与结果检查后达到1.40倍。
+                  </p>
+                  <span class="author"><img src="./imgs/author-post.jpg" alt="" />未来软件新技术实验室</span>
+                  <div class="border-first-button">
+                    <a href="https://doi.org/10.1145/3799682.3840020" target="_blank" rel="noopener noreferrer">阅读论文</a>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -73,7 +99,7 @@
                     2026年11月12日至15日，第26届 IEEE 国际数据挖掘会议（ICDM 2026）在辽宁沈阳举行。11月14日下午，西安电子科技大学广州研究院未来软件新技术实验室硕士生于康朔在 Blue Sky 论坛报告了课题组的两项研究。两篇论文均来自“面向复杂系统级软件的智能理解与透视分析”项目，分别探讨软件持续演化时，开发者如何保留关键设计知识，以及如何判断已有文档是否仍与代码一致。
                   </p>
                   <p>
-                    第一篇论文《Keeping Software Knowledge Alive: Toward Shared Semantic Views for Human-Agent Software Evolution》由文成老师担任第一作者。软件经过多轮修改后，一项约束源于哪条需求、一次设计调整影响了哪些模块，往往很难仅从当前代码中看出来。论文提出供开发者与软件智能体共同使用的“共享语义视图”，将系统运行流程、关键约束及其变更历史关联起来，使双方在修改软件时都能追溯原有的设计依据。第二篇论文《Mining Evidence-Linked Claims from Software Repositories for Contradiction-Aware Knowledge Diagnosis》由于康朔同学担任第一作者。该研究关注代码已经更新、文档却仍沿用旧说法的问题。论文提出从软件仓库中提取可以核查的陈述，为每条陈述关联支持证据和反证，并记录判断的置信度及后续核查建议。这样，当文档与代码出现矛盾时，开发者可以追溯到具体材料，判断哪一处需要更新。
+                    第一篇论文《Keeping Software Knowledge Alive: Toward Shared Semantic Views for Human-Agent Software Evolution》由于康朔进行报告。软件经过多轮修改后，一项约束源于哪条需求、一次设计调整影响了哪些模块，往往很难仅从当前代码中看出来。论文提出供开发者与软件智能体共同使用的“共享语义视图”，将系统运行流程、关键约束及其变更历史关联起来，使双方在修改软件时都能追溯原有的设计依据。第二篇论文《Mining Evidence-Linked Claims from Software Repositories for Contradiction-Aware Knowledge Diagnosis》由于康朔同学担任第一作者。该研究关注代码已经更新、文档却仍沿用旧说法的问题。论文提出从软件仓库中提取可以核查的陈述，为每条陈述关联支持证据和反证，并记录判断的置信度及后续核查建议。这样，当文档与代码出现矛盾时，开发者可以追溯到具体材料，判断哪一处需要更新。
                   </p>
                   <span class="author"><img src="./imgs/author-post.jpg" alt="" />未来软件新技术实验室</span>
                   <div class="border-first-button">
@@ -112,6 +138,31 @@
                   <span class="author"><img src="./imgs/author-post.jpg" alt="" />未来软件新技术实验室</span>
                   <div class="border-first-button">
                     <a href="https://mp.weixin.qq.com/s/hPVS9U6l6lr9Q0XjHfXsNg" target="_blank" rel="noopener noreferrer">阅读学院报道</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+              <div class="blog-post">
+                <div class="thumb">
+                  <a href="https://cyprusconferences.org/issre2026/program/" target="_blank" rel="noopener noreferrer">
+                    <img src="./imgs/news/20261023塞浦路斯利马索尔ISSRE会议.png" alt="胡联合同学在塞浦路斯利马索尔参加 ISSRE 2026" />
+                  </a>
+                </div>
+                <div class="down-content">
+                  <span class="category">学术交流</span>
+                  <span class="date">October 23, 2026</span>
+                  <h4>胡联合同学赴塞浦路斯参加 ISSRE 2026，报告大模型生成可验证 Rust 程序的研究成果</h4>
+                  <p>
+                    2026年10月20日至23日，第37届 IEEE 国际软件可靠性工程研讨会（ISSRE 2026）在塞浦路斯利马索尔举行。10月23日，西安电子科技大学广州研究院未来软件新技术实验室胡联合同学在“软件验证”分会场作论文报告，介绍了如何从自然语言需求出发，利用大语言模型生成可由 Verus 工具验证的 Rust 程序。论文《Toward Verified Code from Natural Language: Understanding Pipeline Design for Formally Verified Rust Program Generation》由胡联合担任第一作者。
+                  </p>
+                  <p>
+                    从一句需求到一段可验证的程序，应该先写代码，还是先说明代码必须满足哪些性质？团队从5个公开来源整理了762项任务，在5个大语言模型上比较了三种做法：直接生成带有规约和证明的程序，先写可执行的 Rust 代码再补充规约与证明，以及先写规约再生成实现。评估时，团队既检查程序能否通过 Verus 验证，也检查规约是否准确表达了原始需求。例如，对排序任务而言，如果规约只要求输出有序，就可能漏掉“输入中的元素必须全部保留”这一条件。实验发现，在多数设置下，直接生成完整的 Verus 程序在验证效果与生成成本之间取得了最好的平衡。先写规约的方式在包含较多循环的任务中也有优势，尤其是在进一步检查规约是否符合题意时。相比之下，先写 Rust 代码、再补规约和证明的流程整体表现较弱。这表明，在程序生成之初就明确输入条件、预期结果和循环中必须保持的性质，有助于模型写出符合需求的可验证程序。
+                  </p>
+                  <span class="author"><img src="./imgs/author-post.jpg" alt="" />未来软件新技术实验室</span>
+                  <div class="border-first-button">
+                    <a href="https://cyprusconferences.org/issre2026/program/" target="_blank" rel="noopener noreferrer">查看会议日程</a>
                   </div>
                 </div>
               </div>
@@ -159,6 +210,39 @@
                   <span class="author"><img src="./imgs/author-post.jpg" alt="" />未来软件新技术实验室</span>
                   <div class="border-first-button">
                     <a href="https://conf.researchr.org/program/ase-2026/program-ase-2026/" target="_blank" rel="noopener noreferrer">查看会议日程</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+              <div class="blog-post">
+                <div class="thumb">
+                  <a href="https://conf.researchr.org/details/eseiw-2026/eseiw-2026-esem---technical-track/25/An-Empirical-Study-of-Problem-Aligned-Multilingual-Code-Generation-and-Directed-Code-" target="_blank" rel="noopener noreferrer">
+                    <img src="./imgs/news/20261009德国慕尼黑ESEM会议.png" alt="王泉贺同学在德国慕尼黑 ESEM 2026 会议作学术报告" />
+                  </a>
+                </div>
+                <div class="down-content">
+                  <span class="category">学术交流</span>
+                  <span class="date">October 9, 2026</span>
+                  <h4>大四本科生王泉贺赴德国慕尼黑参加 ESEM 2026，报告两篇第一作者论文</h4>
+
+                  <p>
+                    2026年10月9日，西安电子科技大学未来软件新技术实验室大四本科生王泉贺在德国慕尼黑举行的第20届国际实证软件工程与度量研讨会（ESEM 2026）上作了两场学术报告。两篇论文分别入选大会技术研究 track（Technical Track）和新兴研究成果 track（Emerging Results Track），均由王泉贺担任第一作者。王泉贺已获推免，将赴天津大学继续深造。
+                  </p>
+
+                  <p>
+                    第一篇论文《An Empirical Study of Problem-Aligned Multilingual Code Generation and Directed Code Translation by Large Language Models》关注一个问题：大模型能用一种编程语言解出一道题，换一种语言还能做对吗？团队构建了涵盖1,489道编程题和8种语言的评测基准 MciBench，在相同题目上比较模型直接编写程序和翻译已有代码的表现。实验发现，即使模型的总体通过率较高，也可能只在部分语言上解对同一道题。即便都通过了测试，不同实现的运行时间和内存占用仍有差异。
+                  </p>
+
+                  <p>
+                    第二篇论文《A Direction-Aware Study of LLM-Based Code Translation Across Eight Programming Languages》进一步考察翻译方向的影响。团队选取100道具有8种语言参考解答的编程题，测试了56个有方向的语言组合。以 Java 和 JavaScript 为例，按每题生成5份译文、至少1份通过测试计算，5个模型从 Java 译为 JavaScript 的平均通过率为85.8%，反向翻译则为58.4%，相差27.4个百分点。这个差距说明，在评估代码迁移能力时，分别报告两个方向的结果才能看清模型在哪个方向更容易出错。
+                  </p>
+
+                  <span class="author"><img src="./imgs/author-post.jpg" alt="" />未来软件新技术实验室</span>
+                  <div class="border-first-button">
+                    <a href="https://doi.org/10.4230/LIPIcs.ESEM.2026.25" target="_blank" rel="noopener noreferrer">阅读多语言代码生成与翻译论文</a>
+                    <a href="https://doi.org/10.4230/LIPIcs.ESEM.2026.63" target="_blank" rel="noopener noreferrer">阅读翻译方向研究论文</a>
                   </div>
                 </div>
               </div>
