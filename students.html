@@ -6,6 +6,7 @@
     <title>学生与校友 | 高可信软件工程技术实验室 · 西电广研院</title>
     <link rel="shortcut icon" href="./imgs/favicon.png">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/student-gallery.js" defer></script>
   </head>
 
   <body>
@@ -35,9 +36,8 @@
                   <li class="scroll-to-section"><a href="students.html" class="active">学生成员</a></li>
                   <li class="scroll-to-section"><a href="publication.html">科研成果</a></li>
                   <li class="scroll-to-section"><a href="news.html">新闻动态</a></li>
-                  <li class="scroll-to-section"><a href="contact.html">联系我们</a></li>
-                  <li class="scroll-to-section">
-                    <div class="border-first-button"><a href="#contact">Quote</a></div>
+                  <li class="scroll-to-section contact-nav">
+                    <div class="border-first-button"><a href="contact.html">联系我们</a></div>
                   </li>
                 </ul><a class="menu-trigger"><span>Menu</span></a><!-- ***** Menu End ***** -->
               </nav>
@@ -48,6 +48,24 @@
 
       
       <div id="students" class="blog">
+        <section class="student-gallery" aria-labelledby="student-gallery-title">
+          <div class="container student-gallery-header">
+            <h2 id="student-gallery-title">团队影像</h2>
+            <button class="student-gallery-toggle" type="button" aria-controls="student-gallery-photos" hidden>暂停滚动</button>
+          </div>
+          <div class="container">
+            <p class="student-gallery-status" role="status">正在加载照片…</p>
+            <div id="student-gallery-photos" class="student-gallery-photos" hidden></div>
+          </div>
+          <img class="student-gallery-preview" alt="" aria-hidden="true" hidden>
+          <dialog class="student-gallery-dialog" aria-label="照片大图">
+            <div class="student-gallery-dialog-actions">
+              <a target="_blank" rel="noopener">查看原图</a>
+              <button type="button" autofocus>关闭</button>
+            </div>
+            <img alt="">
+          </dialog>
+        </section>
         <div class="container">
           <div class="section-heading student-heading"><h6>Postgraduate</h6><h4>研究生</h4><div class="line-dec"></div></div>
           <section id="alumni" class="cohort" aria-label="2022级及2023级毕业校友">
@@ -249,7 +267,7 @@
                   <div class="cohort-results"><h4>研究成果</h4>
                     <h5>论文</h5><ol>
                       <li>Keeping Software Knowledge Alive: Toward Shared Semantic Views for Human-Agent Software Evolution.<span class="publication-meta">Proceedings of the 26th IEEE International Conference on Data Mining (Blue Sky Track) · 2026 · CCF B</span></li>
-                      <li>Mining Evidence-Linked Claims from Software Repositories for Contradiction-Aware Knowledge Diagnosis.<span class="publication-meta">Proceedings of the 26th IEEE International Conference on Data Mining (Blue Sky Track) · 2026 · CCF B</span></li>
+                      <li>Mining Evidence-Linked Claims from Software Repositories for Contradiction-Aware Knowledge Diagnosis.<span class="publication-meta">Proceedings of the 26th IEEE International Conference on Data Mining Workshops (Blue Sky Track) · 2026 · CCF B</span></li>
                     </ol>
                     <h5>专利与软件著作权</h5><ol>
                       <li>基于领域特征图与数据流约束的测试脚本自动生成方法. CN202610571957.4</li>
@@ -349,7 +367,7 @@
                     <h5>论文</h5><ol>
                       <li>IDPVerifier: Verifying Interrupt-driven Programs Efficiently via Heuristic and Reduced Partial-order Constraints.<span class="publication-meta">Companion Proceedings of the 34th ACM International Conference on the Foundations of Software Engineering (IVR Track) · 2026 · CCF A</span></li>
                       <li>Atomicity Violation Detection for Interrupt-Driven Programs via Incrementally Exploring Concurrent Paths.<span class="publication-meta">IEEE/ACM 48th International Conference on Software Engineering (NIER Track) · 2026 · CCF A</span></li>
-                      <li>From potential to confirmed: Effective detection of atomicity violations in interrupt-driven programs via guided memory access graph.<span class="publication-meta">Journal of Systems and Software · 2026 · CCF B</span></li>
+                      <li>From potential to confirmed: Effective detection of atomicity violations in interrupt-driven programs via guided memory access graph.<span class="publication-meta">Journal of Systems and Software · 2027 · CCF B</span></li>
                     </ol>
                   </div>
                 </article>
@@ -526,8 +544,8 @@
               </div>
             </form>
           </section>
-          <section class="cohort" aria-label="2027级硕士生">
-            <h3>2027级硕士生</h3>
+          <section class="cohort" aria-label="2027级硕士生（预计入学）">
+            <h3>2027级硕士生（预计入学）</h3>
             <p class="cohort-hint">点击姓名查看成果；未选择时每3秒自动轮播</p>
             <form class="cohort-form">
               <div class="cohort-choices" aria-label="选择成员">
@@ -543,43 +561,43 @@
               </div>
               <div class="cohort-slides cohort-2027">
                 <article class="cohort-slide" style="animation-delay:-24s">
-                  <div class="cohort-person"><img src="./imgs/profile_s/王玲珑.png" alt="王玲珑"><h4>王玲珑</h4><p>2027级硕士生</p></div>
+                  <div class="cohort-person"><img src="./imgs/profile_s/王玲珑.png" alt="王玲珑"><h4>王玲珑</h4><p>2027级硕士生（预计入学）</p></div>
                   <div class="cohort-results"><h4>研究成果</h4>
                     <p>成果页暂无匹配记录</p>
                   </div>
                 </article>
                 <article class="cohort-slide" style="animation-delay:-21s">
-                  <div class="cohort-person"><img src="./imgs/profile_s/舒涵.png" alt="舒涵"><h4>舒涵</h4><p>2027级硕士生</p></div>
+                  <div class="cohort-person"><img src="./imgs/profile_s/舒涵.png" alt="舒涵"><h4>舒涵</h4><p>2027级硕士生（预计入学）</p></div>
                   <div class="cohort-results"><h4>研究成果</h4>
                     <p>成果页暂无匹配记录</p>
                   </div>
                 </article>
                 <article class="cohort-slide" style="animation-delay:-18s">
-                  <div class="cohort-person"><img src="./imgs/profile_s/尹涛.png" alt="尹涛"><h4>尹涛</h4><p>2027级硕士生</p></div>
+                  <div class="cohort-person"><img src="./imgs/profile_s/尹涛.png" alt="尹涛"><h4>尹涛</h4><p>2027级硕士生（预计入学）</p></div>
                   <div class="cohort-results"><h4>研究成果</h4>
                     <p>成果页暂无匹配记录</p>
                   </div>
                 </article>
                 <article class="cohort-slide" style="animation-delay:-15s">
-                  <div class="cohort-person"><img src="./imgs/profile_s/贾舒雅.png" alt="贾舒雅"><h4>贾舒雅</h4><p>2027级硕士生</p></div>
+                  <div class="cohort-person"><img src="./imgs/profile_s/贾舒雅.png" alt="贾舒雅"><h4>贾舒雅</h4><p>2027级硕士生（预计入学）</p></div>
                   <div class="cohort-results"><h4>研究成果</h4>
                     <p>成果页暂无匹配记录</p>
                   </div>
                 </article>
                 <article class="cohort-slide" style="animation-delay:-12s">
-                  <div class="cohort-person"><img src="./imgs/profile_s/熊旺.png" alt="熊旺"><h4>熊旺</h4><p>2027级硕士生</p></div>
+                  <div class="cohort-person"><img src="./imgs/profile_s/熊旺.png" alt="熊旺"><h4>熊旺</h4><p>2027级硕士生（预计入学）</p></div>
                   <div class="cohort-results"><h4>研究成果</h4>
                     <p>成果页暂无匹配记录</p>
                   </div>
                 </article>
                 <article class="cohort-slide" style="animation-delay:-9s">
-                  <div class="cohort-person"><img src="./imgs/profile_s/蔡少圳.png" alt="蔡少圳"><h4>蔡少圳</h4><p>2027级硕士生</p></div>
+                  <div class="cohort-person"><img src="./imgs/profile_s/蔡少圳.png" alt="蔡少圳"><h4>蔡少圳</h4><p>2027级硕士生（预计入学）</p></div>
                   <div class="cohort-results"><h4>研究成果</h4>
                     <p>成果页暂无匹配记录</p>
                   </div>
                 </article>
                 <article class="cohort-slide" style="animation-delay:-6s">
-                  <div class="cohort-person"><img src="./imgs/profile_s/龚晨阳.png" alt="龚晨阳"><h4>龚晨阳</h4><p>2027级硕士生</p></div>
+                  <div class="cohort-person"><img src="./imgs/profile_s/龚晨阳.png" alt="龚晨阳"><h4>龚晨阳</h4><p>2027级硕士生（预计入学）</p></div>
                   <div class="cohort-results"><h4>研究成果</h4>
                       <h5>获奖</h5><ol>
                         <li>中国国际大学生创新大赛（2026）省级铜奖</li>
@@ -587,7 +605,7 @@
                   </div>
                 </article>
                 <article class="cohort-slide" style="animation-delay:-3s">
-                  <div class="cohort-person"><img src="./imgs/profile_s/常浩林.png" alt="常浩林"><h4>常浩林</h4><p>2027级硕士生</p></div>
+                  <div class="cohort-person"><img src="./imgs/profile_s/常浩林.png" alt="常浩林"><h4>常浩林</h4><p>2027级硕士生（预计入学）</p></div>
                   <div class="cohort-results"><h4>研究成果</h4>
                     <p>成果页暂无匹配记录</p>
                   </div>
@@ -595,8 +613,8 @@
               </div>
             </form>
           </section>
-          <section id="undergraduates" class="cohort" aria-label="优秀本科生">
-            <h3>优秀本科生</h3>
+          <section id="undergraduates" class="cohort" aria-label="本科生">
+            <h3>本科生</h3>
             <p class="cohort-hint">点击姓名查看成果；未选择时每3秒自动轮播</p>
             <form class="cohort-form">
               <div class="cohort-choices" aria-label="选择成员">
@@ -644,55 +662,27 @@
           <div class="row">
             <div class="col-lg-6 offset-lg-3">
               <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="section-heading wow fadeIn">
-                <h6>Contact Us</h6>
-                <h4>Get In Touch With Us <em>Now</em></h4>
+                <h4>联系方式</h4>
                 <div class="line-dec"></div>
               </div>
             </div>
             <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 wow fadeInUp">
-              <form id="contact-2" action="" method="post">
+              <div id="contact-2" class="contact-panel">
                 <div class="row">
-                  <div class="col-lg-12">
-                    <div class="contact-dec"><img src="./imgs/contact-dec-v2.png" alt="" /></div>
-                  </div>
                   <div class="col-lg-5">
                     <div id="map" class="c29285" aria-label="广州研究院周边地图"></div>
                     <p>广东省广州市黄埔区新龙镇知明路83号西安电子科技大学广州研究院</p>
                   </div>
-                  <div class="col-lg-7">
-                    <div class="fill-form">
-                      <div class="row">
-                        <div class="col-lg-4">
-                          <div class="info-post">
-                            <div class="icon"><img src="./imgs/location-icon.png" alt="" /><a href="#">广州市黄埔区</a></div>
-                          </div>
-                        </div>
-                        <div class="col-lg-4">
-                          <div class="info-post">
-                            <div class="icon"><img src="./imgs/email-icon.png" alt="" /><a href="#" id="ivvinf">wencheng[AT]xidian.edu.cn</a></div>
-                          </div>
-                        </div>
-                        <div class="col-lg-4">
-                          <div class="info-post">
-                            <div class="icon"><img src="./imgs/phone-icon.png" alt="" /><a href="#">510555</a></div>
-                          </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <fieldset><input type="name" name="name" id="name" placeholder="Name" autocomplete="on" required /></fieldset>
-                          <fieldset><input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email" required /></fieldset>
-                          <fieldset><input type="subject" name="subject" id="subject" placeholder="Subject" autocomplete="on" /></fieldset>
-                        </div>
-                        <div class="col-lg-6">
-                          <fieldset><textarea name="message" type="text" id="message" placeholder="Message" required class="form-control"></textarea></fieldset>
-                        </div>
-                        <div class="col-lg-12">
-                          <fieldset><button type="submit" id="form-submit" class="main-button">Send Message Now</button></fieldset>
-                        </div>
-                      </div>
+                  <div class="col-lg-7 align-self-center">
+                    <div class="contact-details">
+                      <p><strong>联系人：</strong>文成</p>
+                      <p><strong>邮箱：</strong>wencheng [AT] xidian.edu.cn</p>
+                      <p><strong>邮编：</strong>510555</p>
+                      <a href="contact.html#admissions">查看招生信息</a>
                     </div>
                   </div>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>

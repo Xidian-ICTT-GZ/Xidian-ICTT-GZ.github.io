@@ -35,9 +35,8 @@
                   <li class="scroll-to-section"><a href="students.html">学生成员</a></li>
                   <li class="scroll-to-section"><a href="publication.html">科研成果</a></li>
                   <li class="scroll-to-section"><a href="news.html">新闻动态</a></li>
-                  <li class="scroll-to-section"><a href="contact.html">联系我们</a></li>
-                  <li class="scroll-to-section">
-                    <div class="border-first-button"><a href="#contact">Quote</a></div>
+                  <li class="scroll-to-section contact-nav">
+                    <div class="border-first-button"><a href="contact.html">联系我们</a></div>
                   </li>
                 </ul><a class="menu-trigger"><span>Menu</span></a><!-- ***** Menu End ***** -->
               </nav>
@@ -62,7 +61,7 @@
                           <p><br/>软件工程，精益求精。<br/>人工智能，创新引领。<br/>可信技术，保障安全。<br/>产教融合，智慧未来。</p>
                       </div>
                       <div class="col-lg-12">
-                        <div class="border-first-button scroll-to-section"><a href="#contact">Quote</a></div>
+                        <div class="border-first-button scroll-to-section"><a href="contact.html">联系我们</a></div>
                       </div>
                     </div>
                   </div>
@@ -89,7 +88,8 @@
                   <div class="row">
                     <div class="col-lg-12">
                       <br>
-                      <h5>我们的研究团队隶属于西安电子科技大学广州研究院，是由校本部计算理论与技术研究所（Institute of Computing Theory and Technology, ICTT）原班核心成员建立和发展起来的，由田聪教授担任团队负责人，秦教授担任顾问及指导，小组核心成员由<B>3</B>名广研院全职教师（文成、李卓华、苏杰）、<B>4</B>名西电本部兼职教师（田聪、陆旭、于斌、马智）、<B>十余</B>名硕士研究生组成。实验室于2023年6月创建，并拟命名为计算理论与技术研究所（广州），即ICTT（广州），以“保障大规模软件质量和可信性”为使命，重点关注人工智能、应用软件、工控系统等领域的软件质量和可信性，致力于科研创新，利用大语言模型、形式化验证、模糊测试、静态分析与符号执行等技术，进行软件的测试与验证，以及软件缺陷的自动挖掘与理解，实现大规模软件系统的质量评估。</h5>
+                      <h5>高可信软件工程技术实验室亦称未来软件新技术实验室，隶属于西安电子科技大学广州研究院，团队也使用计算理论与技术研究所（广州）的名称，英文简称 ICTT (GZ)。实验室成立于2023年6月，由校本部计算理论与技术研究所（ICTT）的核心成员参与组建。田聪教授担任团队负责人，秦教授担任顾问。</h5>
+                      <h5>团队有三名广研院全职成员（文成、李卓华、苏杰，其中苏杰为博士后）、四名西电校本部兼职教师（田聪、陆旭、于斌、马智），以及各年级硕士研究生。团队面向人工智能、应用软件和工控系统，研究大语言模型、形式化验证、模糊测试、静态分析与符号执行等技术，用于软件测试与验证、缺陷分析和质量评估。</h5>
                       <br>
                       <div class="col-lg-6">
                         <img src="./imgs/ictt.jpeg" alt="" width="100%"/>
@@ -399,55 +399,27 @@
           <div class="row">
             <div class="col-lg-6 offset-lg-3">
               <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="section-heading wow fadeIn">
-                <h6>Contact Us</h6>
-                <h4>Get In Touch With Us <em>Now</em></h4>
+                <h4>联系方式</h4>
                 <div class="line-dec"></div>
               </div>
             </div>
             <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 wow fadeInUp">
-              <form id="contact-2" action="" method="post">
+              <div id="contact-2" class="contact-panel">
                 <div class="row">
-                  <div class="col-lg-12">
-                    <div class="contact-dec"><img src="./imgs/contact-dec-v2.png" alt="" /></div>
-                  </div>
                   <div class="col-lg-5">
                     <div id="map" class="c29285" aria-label="广州研究院周边地图"></div>
                     <p>广东省广州市黄埔区新龙镇知明路83号西安电子科技大学广州研究院</p>
                   </div>
-                  <div class="col-lg-7">
-                    <div class="fill-form">
-                      <div class="row">
-                        <div class="col-lg-4">
-                          <div class="info-post">
-                            <div class="icon"><img src="./imgs/location-icon.png" alt="" /><a href="#">广州市黄埔区</a></div>
-                          </div>
-                        </div>
-                        <div class="col-lg-4">
-                          <div class="info-post">
-                            <div class="icon"><img src="./imgs/email-icon.png" alt="" /><a href="#" id="ivvinf">wencheng[AT]xidian.edu.cn</a></div>
-                          </div>
-                        </div>
-                        <div class="col-lg-4">
-                          <div class="info-post">
-                            <div class="icon"><img src="./imgs/phone-icon.png" alt="" /><a href="#">510555</a></div>
-                          </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <fieldset><input type="name" name="name" id="name" placeholder="Name" autocomplete="on" required /></fieldset>
-                          <fieldset><input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email" required /></fieldset>
-                          <fieldset><input type="subject" name="subject" id="subject" placeholder="Subject" autocomplete="on" /></fieldset>
-                        </div>
-                        <div class="col-lg-6">
-                          <fieldset><textarea name="message" type="text" id="message" placeholder="Message" required class="form-control"></textarea></fieldset>
-                        </div>
-                        <div class="col-lg-12">
-                          <fieldset><button type="submit" id="form-submit" class="main-button">Send Message Now</button></fieldset>
-                        </div>
-                      </div>
+                  <div class="col-lg-7 align-self-center">
+                    <div class="contact-details">
+                      <p><strong>联系人：</strong>文成</p>
+                      <p><strong>邮箱：</strong>wencheng [AT] xidian.edu.cn</p>
+                      <p><strong>邮编：</strong>510555</p>
+                      <a href="contact.html#admissions">查看招生信息</a>
                     </div>
                   </div>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>
