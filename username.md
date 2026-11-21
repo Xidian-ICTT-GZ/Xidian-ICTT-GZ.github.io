@@ -23,7 +23,7 @@
 |fhrnv1|邓超|
 |urlyy|刘宇阳|
 |555kej|柯汶君|
-|Moonrua|王泉贺|
+|M1inato|王泉贺|
 |shoufeng123|于康朔|
 |szdxdxdx|李健衡|
 |supperaddict|胡联合|
@@ -35,3 +35,5 @@
 |nuczyc|张雨晨|
 |zxy-coder1089|张祥昀|
 |shishuishuia|郑小春|
+|yitto-yitt|陈溢桐|
+|Wisp-xd|龚晨阳|
