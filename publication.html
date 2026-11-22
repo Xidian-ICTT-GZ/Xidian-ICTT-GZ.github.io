@@ -38,23 +38,24 @@
         #paper ol { padding-left: 2em; }
         #paper ol > li { display: list-item; list-style: decimal outside; }
       </style>
-      <header data-wow-duration="0.75s" data-wow-delay="0s" class="header-area header-sticky wow slideInDown">
+      <link rel="stylesheet" href="./css/site-glass.css" />
+      <header class="header-area header-sticky site-glass-header">
         <div class="container">
           <div class="row">
             <div class="col-12">
               <nav class="main-nav">
-                <!-- ***** Logo Start ***** --><a href="#" class="logo"--><img src="./imgs/logo-xdg.png" alt="HTMLPAGE" height="40" /></a><!-- ***** Logo End ***** -->
+                <!-- ***** Logo Start ***** --><a href="#" class="logo"><img src="./imgs/logo-xdg.png" alt="西安电子科技大学广州研究院" height="40" /></a><!-- ***** Logo End ***** -->
                 <!-- ***** Menu Start ***** -->
-                <ul class="nav">
+                <ul id="site-nav" class="nav">
                   <li class="scroll-to-section"><a href="index.html">首页</a></li>
                   <li class="scroll-to-section"><a href="people.html">师资队伍</a></li>
                   <li class="scroll-to-section"><a href="students.html">团队成员</a></li>
-                  <li class="scroll-to-section"><a href="publication.html" class="active">科研成果</a></li>
+                  <li class="scroll-to-section"><a href="publication.html" class="active" aria-current="page">科研成果</a></li>
                   <li class="scroll-to-section"><a href="news.html">新闻动态</a></li>
                   <li class="scroll-to-section contact-nav">
-                    <div class="border-first-button"><a href="contact.html">联系我们</a></div>
+                    <div class="border-first-button"><a class="site-glass-button" href="contact.html">联系我们</a></div>
                   </li>
-                </ul><a class="menu-trigger"><span>Menu</span></a><!-- ***** Menu End ***** -->
+                </ul><button class="menu-trigger" type="button" aria-label="网站导航" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true"></span></button><!-- ***** Menu End ***** -->
               </nav>
             </div>
           </div>
@@ -65,7 +66,7 @@
         <div class="container">
           <div class="row">
 
-            <div data-wow-duration="0.6s" data-wow-delay="0.3s" class="col-lg-4 offset-lg-4 wow fadeInDown">
+            <div class="col-lg-4 offset-lg-4">
               <div class="section-heading">
                 <h6>Publication</h6>
                 <h4>学术论文</h4>
@@ -73,11 +74,11 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.6s" data-wow-delay="0.3s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
 
               <div class="heading">
                 <br/>
-                <h3 class="wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;"><B>2027</B></h3>
+                <h3><B>2027</B></h3>
                 <br/>
                 <ol>
                   
@@ -136,7 +137,7 @@
 
               <div class="heading">
                 <br/>
-                <h3 class="wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;"><B>2026</B></h3>
+                <h3><B>2026</B></h3>
                 <br/>
                 <ol>
           
@@ -696,7 +697,7 @@
 
               <div class="heading">
                 <br/>
-                <h3 class="wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;"><B>2025</B></h3>
+                <h3><B>2025</B></h3>
                 <br/>
                 <ol>
                   
@@ -782,7 +783,7 @@
 
               <div class="heading">
                 <br/>
-                <h3 class="wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;"><B>2024</B></h3>
+                <h3><B>2024</B></h3>
                 <br/>
                 <ol>
                   <li class="publication-entry">
@@ -897,7 +898,7 @@
               
               <div class="heading">
                 <br/>
-                <h3 class="wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;"><B>2023</B></h3>
+                <h3><B>2023</B></h3>
                 <br/>
                 <ol>
                   
@@ -946,7 +947,7 @@
 				
               <div class="heading">
                 <br/>
-                <h3 class="wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;"><B>2022</B></h3>
+                <h3><B>2022</B></h3>
                 <br/>
                 <ol>
                   
@@ -1021,7 +1022,7 @@
         <div class="container">
           <div class="row">
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-4 offset-lg-4 wow fadeInDown">
+            <div class="col-lg-4 offset-lg-4">
               <div class="section-heading">
                 <h6>Patent</h6>
                 <h4>专利软著</h4>
@@ -1029,7 +1030,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="heading">
                 <h4>专利申请</h4>
                 <h5>- 文成, 刘杜钢, 胡联合, 蒋超, 许智武, 秦胜潮. 面向Rust形式化验证的上下文感知错误选择与修复轨迹优化方法和装置. CN202610861014.5</h5>
@@ -1066,7 +1067,7 @@
         <div class="container">
           <div class="row">
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-4 offset-lg-4 wow fadeInDown">
+            <div class="col-lg-4 offset-lg-4">
               <div class="section-heading">
                 <h6>Funding</h6>
                 <h4>科研项目</h4>
@@ -1074,7 +1075,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="heading">
                 <h5>- <B>国家自然科学基金，面上项目</B>，基于分离逻辑与大语言模型辅助的自动程序验证技术，62472339，2025年1月1日-2028年12月31日，50万元，在研，项目负责人：秦胜潮</h5>
                 <h5>- <B>国家自然科学基金，青年科学基金项目</B>，面向并发缺陷检测的高效空间探索技术研究，6240073166，2025年1月1日-2027年12月31日，30万元，在研，项目负责人：苏杰</h5>
@@ -1098,12 +1099,12 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-6 offset-lg-3">
-              <div data-wow-duration="0.6s" data-wow-delay="0.5s" class="section-heading wow fadeIn">
+              <div class="section-heading">
                 <h4>联系方式</h4>
                 <div class="line-dec"></div>
               </div>
             </div>
-            <div data-wow-duration="0.5s" data-wow-delay="0.25s" class="col-lg-12 wow fadeInUp">
+            <div class="col-lg-12">
               <div id="contact-2" class="contact-panel">
                 <div class="row">
                   <div class="col-lg-5">
@@ -1133,10 +1134,10 @@
           </div>
         </div>
       </footer><!-- Scripts -->
+      <script src="./js/site-glass.js" async></script>
       <script src="./js/jquery.min.js"></script>
       <script src="./js/bootstrap.bundle.min.js"></script>
       <script src="./js/owl-carousel.js"></script>
-      <script src="./js/animation.js"></script>
       <script src="./js/imagesloaded.js"></script>
       <script src="./js/custom.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>

@@ -22,23 +22,24 @@
       <link rel="stylesheet" href="./css/owl.css" />
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
       <link rel="stylesheet" href="./css/lab-refresh.css" />
-      <header data-wow-duration="0.75s" data-wow-delay="0s" class="header-area header-sticky wow slideInDown">
+      <link rel="stylesheet" href="./css/site-glass.css" />
+      <header class="header-area header-sticky site-glass-header">
         <div class="container">
           <div class="row">
             <div class="col-12">
               <nav class="main-nav">
-                <!-- ***** Logo Start ***** --><a href="#" class="logo"--><img src="./imgs/logo-xdg.png" alt="HTMLPAGE" height="40" /></a><!-- ***** Logo End ***** -->
+                <!-- ***** Logo Start ***** --><a href="#" class="logo"><img src="./imgs/logo-xdg.png" alt="西安电子科技大学广州研究院" height="40" /></a><!-- ***** Logo End ***** -->
                 <!-- ***** Menu Start ***** -->
-                <ul class="nav">
+                <ul id="site-nav" class="nav">
                   <li class="scroll-to-section"><a href="index.html">首页</a></li>
                   <li class="scroll-to-section"><a href="people.html">师资队伍</a></li>
                   <li class="scroll-to-section"><a href="students.html">团队成员</a></li>
                   <li class="scroll-to-section"><a href="publication.html">科研成果</a></li>
-                  <li class="scroll-to-section"><a href="news.html" class="active">新闻动态</a></li>
+                  <li class="scroll-to-section"><a href="news.html" class="active" aria-current="page">新闻动态</a></li>
                   <li class="scroll-to-section contact-nav">
-                    <div class="border-first-button"><a href="contact.html">联系我们</a></div>
+                    <div class="border-first-button"><a class="site-glass-button" href="contact.html">联系我们</a></div>
                   </li>
-                </ul><a class="menu-trigger"><span>Menu</span></a><!-- ***** Menu End ***** -->
+                </ul><button class="menu-trigger" type="button" aria-label="网站导航" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true"></span></button><!-- ***** Menu End ***** -->
               </nav>
             </div>
           </div>
@@ -49,7 +50,7 @@
       <div id="blog" class="blog">
         <div class="container">
           <div class="row">
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-4 offset-lg-4 wow fadeInDown">
+            <div class="col-lg-4 offset-lg-4">
               <div class="section-heading">
                 <h6>News</h6>
                 <h4>新闻动态</h4>
@@ -57,7 +58,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb">
                   <a href="https://doi.org/10.1145/3799682.3840020" target="_blank" rel="noopener noreferrer">
@@ -82,7 +83,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb">
                   <a href="https://icdm2026.neu.edu.cn/BlueSkyForum/list.htm" target="_blank" rel="noopener noreferrer">
@@ -107,7 +108,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb">
                   <a href="https://mp.weixin.qq.com/s/hPVS9U6l6lr9Q0XjHfXsNg" target="_blank" rel="noopener noreferrer">
@@ -141,7 +142,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb">
                   <a href="https://cyprusconferences.org/issre2026/program/" target="_blank" rel="noopener noreferrer">
@@ -166,7 +167,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
             <div class="blog-post">
               <div class="thumb">
                 <a href="https://cips-cl.org/?p=89297" target="_blank" rel="noopener noreferrer">
@@ -188,7 +189,7 @@
             </div>
           </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb">
                   <a href="https://conf.researchr.org/program/ase-2026/program-ase-2026/" target="_blank" rel="noopener noreferrer">
@@ -213,7 +214,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb">
                   <a href="https://conf.researchr.org/details/eseiw-2026/eseiw-2026-esem---technical-track/25/An-Empirical-Study-of-Problem-Aligned-Multilingual-Code-Generation-and-Directed-Code-" target="_blank" rel="noopener noreferrer">
@@ -246,7 +247,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb">
                   <img src="./imgs/news/20260714广州黄埔ICRMS会议.png" alt="ICRMS 2026 广州黄埔会议现场" />
@@ -267,7 +268,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb">
                   <img src="./imgs/news/20260718澳大利亚黄金海岸Internetware会议.png" alt="Internetware 2026 澳大利亚黄金海岸会议" />
@@ -287,7 +288,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb"><a href="https://mp.weixin.qq.com/s/uVFbYEFRRTkIshYZw1tjzg" target="_blank" rel="noopener noreferrer"><img src="./imgs/news/20260524杭州CCF形式化方法青年论坛.png" alt="2026年CCF形式化方法专委会青年学术论坛杭州会场" /></a></div>
                   <div class="down-content"><span class="category">学术交流</span><span class="date">May 24, 2026</span><a href="https://mp.weixin.qq.com/s/uVFbYEFRRTkIshYZw1tjzg" target="_blank" rel="noopener noreferrer">
@@ -303,7 +304,7 @@
             </div>
           </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb"><a href="https://news.szccf.org.cn/archives/4069" target="_blank"><img src="./imgs/news/20260118新型计算与大模型时代的安全可信软件技术论坛.png" alt="" /></a></div>
                 <div class="down-content"><span class="category">学术交流</span><span class="date">January 18, 2026</span><a href="https://news.szccf.org.cn/archives/4069" target="_blank" rel="noopener noreferrer">
@@ -316,7 +317,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb"><img src="./imgs/news/20251212广研院高端人才报告.png" alt="" /></div>
                 <div class="down-content"><span class="category">学术交流</span><span class="date">December 12, 2025</span>
@@ -327,7 +328,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb"><img src="./imgs/news/20251211北京502所中期答辩.png" alt="" /></div>
                 <div class="down-content"><span class="category">学术交流</span><span class="date">December 12, 2025</span>
@@ -338,7 +339,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb"><img src="./imgs/news/20251127武汉中国软件大会.png" alt="" /></div>
                 <div class="down-content"><span class="category">学术交流</span><span class="date">November 27, 2025</span>
@@ -350,7 +351,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb"><img src="./imgs/news/20251115韩国ASE.png" alt="" /></div>
                 <div class="down-content"><span class="category">学术交流</span><span class="date">November 15, 2025</span>
@@ -361,7 +362,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb"><img src="./imgs/news/20250801昆明CCFAI.png" alt="" /></div>
                 <div class="down-content"><span class="category">学术交流</span><span class="date">August 01, 2025</span>
@@ -372,7 +373,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb"><img src="./imgs/news/20250523珠海横琴YEF.png" alt="" /></div>
                 <div class="down-content"><span class="category">学术交流</span><span class="date">May 23, 2025</span>
@@ -384,7 +385,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb"><img src="./imgs/news/20250412重庆缙云山重大项目.png" alt="" /></div>
                 <div class="down-content"><span class="category">学术交流</span><span class="date">April 12, 2025</span>
@@ -395,7 +396,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb"><a href="https://news.xidian.edu.cn/info/2106/240616.htm" target="_blank"><img src="./imgs/news/20241201中国软件大会.png" alt="" /></a></div>
                 <div class="down-content"><span class="category">学术交流</span><span class="date">November 17, 2024</span>
@@ -407,7 +408,7 @@
               </div>
             </div>
             
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb"><a href="https://zhuanlan.zhihu.com/p/714049942" target="_blank"><img src="./imgs/news/20240801华为云上屯.png" alt="" /></a></div>
                 <div class="down-content"><span class="category">学术交流</span><span class="date">August 01, 2024</span>
@@ -419,7 +420,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb"><img src="./imgs/news/20240729贵阳TASE.png" alt="" /></div>
                 <div class="down-content"><span class="category">学术交流</span><span class="date">July 29, 2024</span>
@@ -430,7 +431,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb"><img src="./imgs/news/20240727加拿大CAV.png" alt="" /></div>
                 <div class="down-content"><span class="category">学术交流</span><span class="date">July 27, 2024</span>
@@ -442,7 +443,7 @@
               </div>
             </div>
 
-      			<div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb"><img src="./imgs/news/20240418葡萄牙里斯本软工工程国际大会.png" alt="" /></div>
                 <div class="down-content"><span class="category">学术交流</span><span class="date">April 18th, 2024</span>
@@ -454,7 +455,7 @@
               </div>
             </div>
 			
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb"><img src="./imgs/news/20231216珠海重大项目.png" alt="" /></div>
                 <div class="down-content"><span class="category">学术交流</span><span class="date">November 4, 2023</span>
@@ -465,7 +466,7 @@
               </div>
             </div>
 			
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb"><a href="https://finance.sina.com.cn/tech/roll/2023-12-04/doc-imzwvwiq5376993.shtml" target="_blank"><img src="./imgs/news/20231204上海中国软件大会.png" alt="" /></a></div>
                 <div class="down-content"><span class="category">学术交流</span><span class="date">November 4, 2023</span><a href="https://finance.sina.com.cn/tech/roll/2023-12-04/doc-imzwvwiq5376993.shtml" target="_blank">
@@ -478,7 +479,7 @@
               </div>
             </div>
 			
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb"><img src="./imgs/news/20231104新疆喀什LEDS23.png" alt="" /></div>
                 <div class="down-content"><span class="category">学术交流</span><span class="date">November 4, 2023</span>
@@ -489,7 +490,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb"><a href="http://chinaosc.ccf.org.cn/" target="_blank"><img src="./imgs/news/20231021湖南长沙中国开源大会.png" alt="" /></a></div>
                 <div class="down-content"><span class="category">学术交流</span><span class="date">October 21, 2023</span><a href="http://chinaosc.ccf.org.cn/" target="_blank">
@@ -500,7 +501,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb"><a href="https://sites.google.com/view/rust-rpg" target="_blank"><img src="./imgs/news/20231010Rust库测试.png" alt="" /></a></div>
                 <div class="down-content"><span class="category">论文发表</span><span class="date">October 10, 2023</span><a href="https://sites.google.com/view/rust-rpg" target="_blank">
@@ -513,7 +514,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb"><a href="https://gzyjy.xidian.edu.cn/info/1029/5090.htm" target="_blank"><img src="./imgs/news/20230835青年基金.png" alt="" /></a></div>
                 <div class="down-content"><span class="category">项目获批</span><span class="date">August 25, 2023</span><a href="https://gzyjy.xidian.edu.cn/info/1029/5090.htm" target="_blank">
@@ -526,7 +527,7 @@
               </div>
             </div>
                       
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb"><a href="https://news.imnu.edu.cn/info/1011/12926.htm" target="_blank"><img src="./imgs/news/20230721呼和浩特.png" alt="" /></a></div>
                 <div class="down-content"><span class="category">学术交流</span><span class="date">July 21, 2023</span><a href="https://news.imnu.edu.cn/info/1011/12926.htm" target="_blank">
@@ -539,7 +540,7 @@
               </div>
             </div>
             
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb"><a href="https://2023.esec-fse.org/details/fse-2023-research-papers/35/Detecting-Atomicity-Violations-in-Interrupt-Driven-Programs-via-Interruption-Points-S" target="_blank"><img src="./imgs/news/20230705中断检测.png" alt="" /></a></div>
                 <div class="down-content"><span class="category">论文发表</span><span class="date">July 5, 2023</span><a href="https://2023.esec-fse.org/details/fse-2023-research-papers/35/Detecting-Atomicity-Violations-in-Interrupt-Driven-Programs-via-Interruption-Points-S" target="_blank">
@@ -552,7 +553,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb"><a href="https://gzyjy.xidian.edu.cn/info/1211/4951.htm" target="_blank"><img src="./imgs/news/20230630博士后面上.png" alt="" /></a></div>
                 <div class="down-content"><span class="category">项目获批</span><span class="date">June 30, 2023</span><a href="https://gzyjy.xidian.edu.cn/info/1211/4951.htm" target="_blank">
@@ -565,7 +566,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb"><a href="https://gzyjy.xidian.edu.cn/info/1211/4951.htm" target="_blank"><img src="./imgs/news/20230613华为项目.png" alt="" /></a></div>
                 <div class="down-content"><span class="category">项目获批</span><span class="date">June 13, 2023</span><a href="https://gzyjy.xidian.edu.cn/info/1211/4951.htm" target="_blank">
@@ -578,7 +579,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="blog-post">
                 <div class="thumb"><a href="https://gzyjy.xidian.edu.cn/info/1028/4655.htm" target="_blank"><img src="./imgs/news/20230426广研院.png" alt="" /></a></div>
                 <div class="down-content"><span class="category">学术交流</span><span class="date">April 26, 2023</span><a href="https://gzyjy.xidian.edu.cn/info/1028/4655.htm" target="_blank">
@@ -600,12 +601,12 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-6 offset-lg-3">
-              <div data-wow-duration="0.6s" data-wow-delay="0.5s" class="section-heading wow fadeIn">
+              <div class="section-heading">
                 <h4>联系方式</h4>
                 <div class="line-dec"></div>
               </div>
             </div>
-            <div data-wow-duration="0.5s" data-wow-delay="0.25s" class="col-lg-12 wow fadeInUp">
+            <div class="col-lg-12">
               <div id="contact-2" class="contact-panel">
                 <div class="row">
                   <div class="col-lg-5">
@@ -635,10 +636,10 @@
           </div>
         </div>
       </footer><!-- Scripts -->
+      <script src="./js/site-glass.js" async></script>
       <script src="./js/jquery.min.js"></script>
       <script src="./js/bootstrap.bundle.min.js"></script>
       <script src="./js/owl-carousel.js"></script>
-      <script src="./js/animation.js"></script>
       <script src="./js/imagesloaded.js"></script>
       <script src="./js/custom.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>

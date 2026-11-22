@@ -22,23 +22,24 @@
       <link rel="stylesheet" href="./css/owl.css" />
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
       <link rel="stylesheet" href="./css/lab-refresh.css" />
-      <header data-wow-duration="0.75s" data-wow-delay="0s" class="header-area header-sticky wow slideInDown">
+      <link rel="stylesheet" href="./css/site-glass.css" />
+      <header class="header-area header-sticky site-glass-header">
         <div class="container">
           <div class="row">
             <div class="col-12">
               <nav class="main-nav">
-                <!-- ***** Logo Start ***** --><a href="#" class="logo"--><img src="./imgs/logo-xdg.png" alt="HTMLPAGE" height="40" /></a><!-- ***** Logo End ***** -->
+                <!-- ***** Logo Start ***** --><a href="#" class="logo"><img src="./imgs/logo-xdg.png" alt="西安电子科技大学广州研究院" height="40" /></a><!-- ***** Logo End ***** -->
                 <!-- ***** Menu Start ***** -->
-                <ul class="nav">
+                <ul id="site-nav" class="nav">
                   <li class="scroll-to-section"><a href="index.html">首页</a></li>
-                  <li class="scroll-to-section"><a href="people.html" class="active">师资队伍</a></li>
+                  <li class="scroll-to-section"><a href="people.html" class="active" aria-current="page">师资队伍</a></li>
                   <li class="scroll-to-section"><a href="students.html">团队成员</a></li>
                   <li class="scroll-to-section"><a href="publication.html">科研成果</a></li>
                   <li class="scroll-to-section"><a href="news.html">新闻动态</a></li>
                   <li class="scroll-to-section contact-nav">
-                    <div class="border-first-button"><a href="contact.html">联系我们</a></div>
+                    <div class="border-first-button"><a class="site-glass-button" href="contact.html">联系我们</a></div>
                   </li>
-                </ul><a class="menu-trigger"><span>Menu</span></a><!-- ***** Menu End ***** -->
+                </ul><button class="menu-trigger" type="button" aria-label="网站导航" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true"></span></button><!-- ***** Menu End ***** -->
               </nav>
             </div>
           </div>
@@ -49,7 +50,7 @@
         <div class="container">
           <div class="row">
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-4 offset-lg-4 wow fadeInDown">
+            <div class="col-lg-4 offset-lg-4">
               <div class="section-heading">
                 <h6>Faculty</h6>
                 <h4>师资队伍（广研院）</h4>
@@ -57,7 +58,7 @@
               </div>
             </div>
 
-			<div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+			<div class="col-lg-12 show-up">
 
               <div class="col-lg-12">
                 <div class="row">
@@ -66,7 +67,7 @@
                   </div>
                   <div class="col-lg-10">
                   <div class="heading">
-                    <h3 class="wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;"><B>文 成</B></h3>
+                    <h3><B>文 成</B></h3>
                     <p>准聘副教授（讲师）；广研院全职教师</p>
                     <li>硕士生导师，CCF高级会员，CCF网络与系统安全专委会执行委员，CCF形式化方法专委会执行委员。2022年12月于深圳大学计算机科学与技术专业获得工学博士学位，曾赴新加坡南洋理工大学访问（一年），在华为技术有限公司实践（两年）。长期从事软件工程和大语言模型相关研究，主要关注人工智能使能软件测试与验证、可信软件的基础理论与方法、模糊测试、形式化验证等。目前已经在包括CAV、FM、ICSE、ASE、FSE、ACL、KDD、NeurIPS、ISSRE、ESEM、TPDS、TKDD、Information Fusion等顶级国际会议和期刊上发表五十余篇论文，获ASE 2025 ACM SIGSOFT杰出论文奖、第二十五届中国计算语言学大会（CCL 2026）亮点论文、第十七届国际可靠性维修性安全性会议（ICRMS 2026）最佳论文奖、全国形式化方法应用会议（FMAC 2018）最佳论文奖；获2026亚太人工智能教育优秀青年学者奖；作为项目负责人承担国家自然科学基金青年基金项目、中国博士后科学基金面上项目、深圳市面上项目，中央高校基本科研业务费项目，以及多项产学研合作项目（华为）等。研究成果应用于航天控制软件开发和验证，在华为公司费马平台和多个产品线部署使用，发现Linux内核等开源软件数百缺陷（获80+CVE编号）。</li>
                     <li>学校教师主页：<a href="https://faculty.xidian.edu.cn/wencheng"><font color=blue><u>https://faculty.xidian.edu.cn/wencheng</u></font></a></li>
@@ -84,7 +85,7 @@
                   </div>
                   <div class="col-lg-10">
                   <div class="heading">
-                    <h3 class="wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;"><B>苏 杰</B></h3>
+                    <h3><B>苏 杰</B></h3>
                     <p>全职博士后；广研院全职教师</p>
                     <li>全职博士后，CCF专业会员。2023年6月博士毕业于西安电子科技大学计算机科学与技术专业，获工学博士学位（导师：田聪教授）。此前，2016 年毕业于西北农林科技大学，获工学学士学位。2017 年开始攻读西安电子科技大学硕士学位，并于2018 年9 月获硕博连读资格。主要从事模型检测、程序验证、可信软件理论、并发程序分析等方面的研究。目前已在CAV 2024、TKDD、ESEC/FSE 2023、TACAS 2023、ASE 2022、ESEC/FSE 2021和软件学报等国内外学术会议期刊发表学术论文多篇。</li>
                     <li>学校教师主页：<a href="https://faculty.xidian.edu.cn/SUJIE"><font color=blue><u>https://faculty.xidian.edu.cn/SUJIE</u></font></a></li>
@@ -101,7 +102,7 @@
                   </div>
                   <div class="col-lg-10">
                   <div class="heading">
-                    <h3 class="wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;"><B>李卓华</B></h3>
+                    <h3><B>李卓华</B></h3>
                     <p>华山特聘教授；广研院全职教师；</p>
                     <li>博士/硕士生导师，CCF网络与系统安全专委会执行委员。2017年本科毕业于中国科学技术大学，2022年博士毕业于香港中文大学，师从<a href="https://www.cse.cuhk.edu.hk/~cslui"><font color=blue><u>John C.S. Lui</u></font></a>教授（ACM Fellow，IEEE Fellow），随后留校于先进网络与系统研究实验室（ANSRLab）从事博士后研究。曾赴微软亚洲研究院（合作导师：谢幸博士）与百度USA X-Lab（合作导师：韦韬博士）参与短期研究工作。2025年加入西安电子科技大学。他的研究兴趣包括在线学习理论与应用、量子网络与量子计算、系统安全与程序分析等。目前以第一作者/通讯作者在KDD、INFOCOM、WWW、ICLR、CCS等国际会议发表论文20余篇。</li>
                     <li>学校教师主页：<a href="https://faculty.xidian.edu.cn/lizhuohua"><font color=blue><u>https://faculty.xidian.edu.cn/lizhuohua</u></font></a></li>
@@ -121,7 +122,7 @@
         <div class="container">
           <div class="row">
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-4 offset-lg-4 wow fadeInDown">
+            <div class="col-lg-4 offset-lg-4">
               <div class="section-heading">
                 <h6>Faculty</h6>
                 <h4>师资队伍（计科院）</h4>
@@ -129,7 +130,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="col-lg-12">
                 <div class="row">
                   <div class="col-lg-2">
@@ -137,7 +138,7 @@
                   </div>
                   <div class="col-lg-10">
                   <div class="heading">
-                    <h3 class="wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;"><B>田 聪</B></h3>
+                    <h3><B>田 聪</B></h3>
                     <p>教授；总负责人</p>
                     <li>博士生导师，研究生院常务副院长、科学研究院常务副院长，教育部长江学者特聘教授，中国计算机学会杰出会员，曾获国家自然科学优秀青年基金，教育部自然科学奖一等奖和陕西省科学技术奖一等奖一项。主要从事可信软件基础理论与方法、系统软件开发与可信保障、嵌入式软件智能合成与质量保障等方面的研究。作为负责人承担了国家自然科学基金重点项目、优秀青年基金项目、面上项目和青年基金项目。作为主要成员，参与了国家重点基础研究发展计划973子课题和国家自然科学基金可信软件重大专项培育项目。主要研究方向为可信软件基础理论与方法。科研成果先后获得教育部自然科学一等奖和陕西省科学技术一等奖，并在探月工程三期月地高速再入返回飞行器控制和浏览器安全漏洞检测中得到了成功应用。发表包括TSE、TCAD、TKDE、TCS、ICSE、ASE和IJCAI等顶级期刊/会议在内的重要学术论文100余篇，授权国家发明专利30余项。</li>
                   </div>
@@ -153,7 +154,7 @@
                   </div>
                   <div class="col-lg-10">
                   <div class="heading">
-                    <h3 class="wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;"><B>秦老师</B></h3>
+                    <h3><B>秦老师</B></h3>
                     <p>教授；资深顾问</p>
                     <li>博士生导师。英国高等教育学会会士、ACM高级会员、IEEE高级会员、ACM SIGPLAN会员。北京大学学士（1997）和博士（2002）。博士毕业后在新加坡国立大学担任新加坡-MIT 联盟计算机科学研究员。2005 年起在英国Durham 和Teesside 大校任教，2011年晋升正教授，历任科研副院长等职位。研究工作主要涉及形式化规范和建模，程序理论和程序逻辑，程序分析与验证等。截止目前已在国际知名期刊和会议发表高水平论文130多篇。近年来，先后主持EPSRC funded project、 Innovate UK funded project、和国家自然科学基金面上项目等研究。</li>
                     <li>个人主页：<a href="https://scqin.github.io/"><font color=blue><u>https://scqin.github.io/</u></font></a></li>
@@ -170,7 +171,7 @@
                   </div>
                   <div class="col-lg-10">
                   <div class="heading">
-                    <h3 class="wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;"><B>陆 旭</B></h3>
+                    <h3><B>陆 旭</B></h3>
                     <p>副教授；广研院兼职教师</p>
                     <li>硕士生导师，CCF形式化方法专委会执行委员。于2017年在西安电子科技大学获得计算机应用技术专业博士（导师：段振华教授）学位。主要研究方向为形式化方法、程序验证、模型检测、智能决策与智能软件构造。主持国家自然科学基金面上、青年、博士后科学基金等项目，作为核心成员参与国家自然科学基金重大、重点项目等科研任务。近年来发表学术论文多篇，相关成果发表于TKDE、TPDS、TITS、ASE、AAAI等顶级期刊和会议。近年来承担本科生《计算复杂性理论》课程教学，先后面向计算机科学与技术专业拔尖班和普通班开展教学实践。</li>
                     <li>个人主页：<a href="https://faculty.xidian.edu.cn/LX13"><font color=blue><u>https://faculty.xidian.edu.cn/LX13</u></font></a></li>
@@ -187,7 +188,7 @@
                   </div>
                   <div class="col-lg-10">
                   <div class="heading">
-                    <h3 class="wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;"><B>于 斌</B></h3>
+                    <h3><B>于 斌</B></h3>
                     <p>副教授；广研院兼职教师</p>
                     <li>硕士生导师，CCF高级会员，CCF形式化方法专委会执行委员，西电-海思EDA技术委员会第一届技术指导委员会委员。2019年获得西安电子科技大学计算机软件与理论专业工学博士学位（导师：段振华教授），一直从事大规模软件系统的时序逻辑性质描述和运行时验证方面的基础理论与应用研究，是陕西省安全攸关智能软件重点科技创新团队（负责人：田聪教授，学术带头人：段振华教授）和西安市软件可信认证关键技术重点实验室（主任：田聪教授，学术带头人：段振华教授）核心骨干成员，现为计算机科学与技术学院计算理论与技术研究所科研秘书、计算理论与技术研究所本硕博师第二联合党支部书记、中国计算机学会高级会员。目前已在国内外学术期刊和会议发表与项目相关的论文26篇，已授权/申请发明专利6项，软件著作权2项。作为项目负责人，主持国家自然科学基金青年基金1项（30万），陕西省自然科学基础研究计划1项（3万），西安市科技计划项目1项（3万），西咸新区秦创原春种投资基金1项（100万）。</li>
                     <li>个人主页：<a href="https://faculty.xidian.edu.cn/YUBIN"><font color=blue><u>https://faculty.xidian.edu.cn/YUBIN</u></font></a></li>
@@ -204,7 +205,7 @@
                   </div>
                   <div class="col-lg-10">
                   <div class="heading">
-                    <h3 class="wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;"><B>马 智</B></h3>
+                    <h3><B>马 智</B></h3>
                     <p>副教授；广研院兼职教师</p>
                     <li>CCF专业会员，CCF形式化方法专委会通讯委员。2016年于电子科技大学获得学士学位，2018年于日本早稻田大学获得硕士学位，2022年于航天五院502所获得博士学位。主要研究方向为嵌入式系统、操作系统与形式化验证，参与我国第四代空间操作系统SpaceOS研发，负责架构设计与验证，已应用于嫦娥、星网等重大航天工程。在ASE、FM、AAAI等学术会议和Information Fusion等国际期刊发表论文20余篇，获ASE2025杰出论文奖。目前主持10余项研究课题，包括国自然青年项目、KGJ国防重点项目、华为胡杨林基金等。作为主要成员，参与国自然重大项目研发。</li>
                     <li>个人主页：<a href="https://faculty.xidian.edu.cn/MAZHI"><font color=blue><u>https://faculty.xidian.edu.cn/MAZHI</u></font></a></li>
@@ -224,12 +225,12 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-6 offset-lg-3">
-              <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="section-heading wow fadeIn">
+              <div class="section-heading">
                 <h4>联系方式</h4>
                 <div class="line-dec"></div>
               </div>
             </div>
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 wow fadeInUp">
+            <div class="col-lg-12">
               <div id="contact-2" class="contact-panel">
                 <div class="row">
                   <div class="col-lg-5">
@@ -259,10 +260,10 @@
           </div>
         </div>
       </footer><!-- Scripts -->
+      <script src="./js/site-glass.js" async></script>
       <script src="./js/jquery.min.js"></script>
       <script src="./js/bootstrap.bundle.min.js"></script>
       <script src="./js/owl-carousel.js"></script>
-      <script src="./js/animation.js"></script>
       <script src="./js/imagesloaded.js"></script>
       <script src="./js/custom.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>

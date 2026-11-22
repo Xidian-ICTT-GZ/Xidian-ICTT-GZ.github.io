@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>学生与校友 | 高可信软件工程技术实验室 · 西电广研院</title>
+    <title>团队成员 | 高可信软件工程技术实验室 · 西电广研院</title>
     <link rel="shortcut icon" href="./imgs/favicon.png">
     <link rel="stylesheet" href="./css/style.css">
   </head>
@@ -22,23 +22,24 @@
       <link rel="stylesheet" href="./css/owl.css" />
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
       <link rel="stylesheet" href="./css/lab-refresh.css?v=gallery-four-rows" />
-      <header data-wow-duration="0.75s" data-wow-delay="0s" class="header-area header-sticky wow slideInDown">
+      <link rel="stylesheet" href="./css/site-glass.css" />
+      <header class="header-area header-sticky site-glass-header">
         <div class="container">
           <div class="row">
             <div class="col-12">
               <nav class="main-nav">
-                <!-- ***** Logo Start ***** --><a href="#" class="logo"--><img src="./imgs/logo-xdg.png" alt="HTMLPAGE" height="40" /></a><!-- ***** Logo End ***** -->
+                <!-- ***** Logo Start ***** --><a href="#" class="logo"><img src="./imgs/logo-xdg.png" alt="西安电子科技大学广州研究院" height="40" /></a><!-- ***** Logo End ***** -->
                 <!-- ***** Menu Start ***** -->
-                <ul class="nav">
+                <ul id="site-nav" class="nav">
                   <li class="scroll-to-section"><a href="index.html">首页</a></li>
                   <li class="scroll-to-section"><a href="people.html">师资队伍</a></li>
-                  <li class="scroll-to-section"><a href="students.html" class="active">团队成员</a></li>
+                  <li class="scroll-to-section"><a href="students.html" class="active" aria-current="page">团队成员</a></li>
                   <li class="scroll-to-section"><a href="publication.html">科研成果</a></li>
                   <li class="scroll-to-section"><a href="news.html">新闻动态</a></li>
                   <li class="scroll-to-section contact-nav">
-                    <div class="border-first-button"><a href="contact.html">联系我们</a></div>
+                    <div class="border-first-button"><a class="site-glass-button" href="contact.html">联系我们</a></div>
                   </li>
-                </ul><a class="menu-trigger"><span>Menu</span></a><!-- ***** Menu End ***** -->
+                </ul><button class="menu-trigger" type="button" aria-label="网站导航" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true"></span></button><!-- ***** Menu End ***** -->
               </nav>
             </div>
           </div>
@@ -663,12 +664,12 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-6 offset-lg-3">
-              <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="section-heading wow fadeIn">
+              <div class="section-heading">
                 <h4>联系方式</h4>
                 <div class="line-dec"></div>
               </div>
             </div>
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 wow fadeInUp">
+            <div class="col-lg-12">
               <div id="contact-2" class="contact-panel">
                 <div class="row">
                   <div class="col-lg-5">
@@ -698,10 +699,10 @@
           </div>
         </div>
       </footer><!-- Scripts -->
+      <script src="./js/site-glass.js" async></script>
       <script src="./js/jquery.min.js"></script>
       <script src="./js/bootstrap.bundle.min.js"></script>
       <script src="./js/owl-carousel.js"></script>
-      <script src="./js/animation.js"></script>
       <script src="./js/imagesloaded.js"></script>
       <script src="./js/custom.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>

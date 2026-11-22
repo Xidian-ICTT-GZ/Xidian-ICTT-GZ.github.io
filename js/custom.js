@@ -4,6 +4,7 @@
 
 	// Header Type = Fixed
   $(window).scroll(function() {
+    if ($(".site-glass-header").length) return;
     var scroll = $(window).scrollTop();
     var box = $('.header-text').height();
     var header = $('header').height();
@@ -39,7 +40,7 @@
 
 	// Menu Dropdown Toggle
   if($('.menu-trigger').length){
-    $(".menu-trigger").on('click', function() { 
+    $(".menu-trigger").not(".site-glass-header .menu-trigger").on('click', function() {
       $(this).toggleClass('active');
       $('.header-area .nav').slideToggle(200);
     });

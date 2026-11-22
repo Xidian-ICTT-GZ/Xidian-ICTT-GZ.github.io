@@ -22,23 +22,24 @@
       <link rel="stylesheet" href="./css/owl.css" />
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
       <link rel="stylesheet" href="./css/lab-refresh.css" />
-      <header data-wow-duration="0.75s" data-wow-delay="0s" class="header-area header-sticky wow slideInDown">
+      <link rel="stylesheet" href="./css/site-glass.css" />
+      <header class="header-area header-sticky site-glass-header">
         <div class="container">
           <div class="row">
             <div class="col-12">
               <nav class="main-nav">
-                <!-- ***** Logo Start ***** --><a href="#" class="logo"--><img src="./imgs/logo-xdg.png" alt="HTMLPAGE" height="40" /></a><!-- ***** Logo End ***** -->
+                <!-- ***** Logo Start ***** --><a href="#" class="logo"><img src="./imgs/logo-xdg.png" alt="西安电子科技大学广州研究院" height="40" /></a><!-- ***** Logo End ***** -->
                 <!-- ***** Menu Start ***** -->
-                <ul class="nav">
+                <ul id="site-nav" class="nav">
                   <li class="scroll-to-section"><a href="index.html">首页</a></li>
                   <li class="scroll-to-section"><a href="people.html">师资队伍</a></li>
                   <li class="scroll-to-section"><a href="students.html">团队成员</a></li>
                   <li class="scroll-to-section"><a href="publication.html">科研成果</a></li>
                   <li class="scroll-to-section"><a href="news.html">新闻动态</a></li>
                   <li class="scroll-to-section contact-nav">
-                    <div class="border-first-button"><a href="contact.html" class="active" aria-current="page">联系我们</a></div>
+                    <div class="border-first-button"><a href="contact.html" class="site-glass-button active" aria-current="page">联系我们</a></div>
                   </li>
-                </ul><a class="menu-trigger"><span>Menu</span></a><!-- ***** Menu End ***** -->
+                </ul><button class="menu-trigger" type="button" aria-label="网站导航" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true"></span></button><!-- ***** Menu End ***** -->
               </nav>
             </div>
           </div>
@@ -50,7 +51,7 @@
         <div class="container">
           <div class="row">
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-4 offset-lg-4 wow fadeInDown">
+            <div class="col-lg-4 offset-lg-4">
               <div class="section-heading">
                 <h6>Contact</h6>
                 <h4>联系方式</h4>
@@ -58,7 +59,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="heading">
                 <h4><B>实验室名称</B>：高可信软件工程技术实验室（亦称未来软件新技术实验室），暨计算理论与技术研究所（广州，ICTT (GZ)）</h4>
                 <h4><B>实验室主页</B>：<a href="https://xidian.work/"><font color="blue"><u>https://xidian.work/</u></font></a></h4>
@@ -80,7 +81,7 @@
         <div class="container">
           <div class="row">
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-4 offset-lg-4 wow fadeInDown">
+            <div class="col-lg-4 offset-lg-4">
               <div class="section-heading">
                 <h6>Enrollment</h6>
                 <h4 id="admissions">招生信息</h4>
@@ -88,7 +89,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="heading">
                 <h4><B>2027年硕士招生学院</B>：023 国家卓越工程师学院</h4>
                 <h4><B>招生专业领域</B>：085404 计算机技术、085410 人工智能、085412 网络与信息安全能</h4>
@@ -127,7 +128,7 @@
         <div class="container">
           <div class="row">
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-4 offset-lg-4 wow fadeInDown">
+            <div class="col-lg-4 offset-lg-4">
               <div class="section-heading">
                 <h6>Research Teams</h6>
                 <h4>兄弟科研团队</h4>
@@ -135,7 +136,7 @@
               </div>
             </div>
 
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 show-up wow fadeInUp">
+            <div class="col-lg-12 show-up">
               <div class="heading">
                 <h4>1. <a href="https://jisuan.xidian.edu.cn/">计算理论与技术研究所（西电校本部）</a>，简称 ICTT</h4>
                 <h4>2. <a href="https://csse.szu.edu.cn/se/">深圳大学软件工程研究中心</a>软工组</h4>
@@ -153,12 +154,12 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-6 offset-lg-3">
-              <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="section-heading wow fadeIn">
+              <div class="section-heading">
                 <h4>联系方式</h4>
                 <div class="line-dec"></div>
               </div>
             </div>
-            <div data-wow-duration="0.2s" data-wow-delay="0.2s" class="col-lg-12 wow fadeInUp">
+            <div class="col-lg-12">
               <div id="contact-2" class="contact-panel">
                 <div class="row">
                   <div class="col-lg-5">
@@ -188,10 +189,10 @@
           </div>
         </div>
       </footer><!-- Scripts -->
+      <script src="./js/site-glass.js" async></script>
       <script src="./js/jquery.min.js"></script>
       <script src="./js/bootstrap.bundle.min.js"></script>
       <script src="./js/owl-carousel.js"></script>
-      <script src="./js/animation.js"></script>
       <script src="./js/imagesloaded.js"></script>
       <script src="./js/custom.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
