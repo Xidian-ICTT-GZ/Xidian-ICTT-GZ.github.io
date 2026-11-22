@@ -6,7 +6,6 @@
     <title>学生与校友 | 高可信软件工程技术实验室 · 西电广研院</title>
     <link rel="shortcut icon" href="./imgs/favicon.png">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/student-gallery.js" defer></script>
   </head>
 
   <body>
@@ -22,7 +21,7 @@
       <link rel="stylesheet" href="./css/animated.css" />
       <link rel="stylesheet" href="./css/owl.css" />
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
-      <link rel="stylesheet" href="./css/lab-refresh.css" />
+      <link rel="stylesheet" href="./css/lab-refresh.css?v=gallery-wide" />
       <header data-wow-duration="0.75s" data-wow-delay="0s" class="header-area header-sticky wow slideInDown">
         <div class="container">
           <div class="row">
@@ -33,7 +32,7 @@
                 <ul class="nav">
                   <li class="scroll-to-section"><a href="index.html">首页</a></li>
                   <li class="scroll-to-section"><a href="people.html">师资队伍</a></li>
-                  <li class="scroll-to-section"><a href="students.html" class="active">学生成员</a></li>
+                  <li class="scroll-to-section"><a href="students.html" class="active">团队成员</a></li>
                   <li class="scroll-to-section"><a href="publication.html">科研成果</a></li>
                   <li class="scroll-to-section"><a href="news.html">新闻动态</a></li>
                   <li class="scroll-to-section contact-nav">
@@ -49,13 +48,15 @@
       
       <div id="students" class="blog">
         <section class="student-gallery" aria-labelledby="student-gallery-title">
-          <div class="container student-gallery-header">
-            <h2 id="student-gallery-title">团队影像</h2>
-            <button class="student-gallery-toggle" type="button" aria-controls="student-gallery-photos" hidden>暂停滚动</button>
-          </div>
-          <div class="container">
-            <p class="student-gallery-status" role="status">正在加载照片…</p>
-            <div id="student-gallery-photos" class="student-gallery-photos" hidden></div>
+          <div class="student-gallery-frame">
+            <div class="student-gallery-inner">
+              <div class="student-gallery-header">
+                <h2 id="student-gallery-title">团队影像</h2>
+                <button class="student-gallery-toggle" type="button" aria-controls="student-gallery-photos" hidden>暂停轮播</button>
+              </div>
+              <p class="student-gallery-status" role="status">正在加载照片…</p>
+              <div id="student-gallery-photos" class="student-gallery-photos" hidden></div>
+            </div>
           </div>
           <img class="student-gallery-preview" alt="" aria-hidden="true" hidden>
           <dialog class="student-gallery-dialog" aria-label="照片大图">
@@ -66,6 +67,7 @@
             <img alt="">
           </dialog>
         </section>
+        <script src="./js/student-gallery.js?v=gallery-wide" async></script>
         <div class="container">
           <div class="section-heading student-heading"><h6>Postgraduate</h6><h4>研究生</h4><div class="line-dec"></div></div>
           <section id="alumni" class="cohort" aria-label="2022级及2023级毕业校友">
