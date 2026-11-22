@@ -78,7 +78,7 @@
       if (duplicate) card.tabIndex = -1;
 
       const image = document.createElement('img');
-      image.addEventListener('error', () => { card.textContent = '查看原图'; }, { once: true });
+      image.addEventListener('error', () => { card.textContent = '查看大图'; }, { once: true });
       image.alt = '';
       // The two ends of each list can be visible when the loop starts.
       image.loading = index < 7 || index >= pictures.length - 2 ? 'eager' : 'lazy';
@@ -184,22 +184,26 @@
       document.head.append(index);
       return;
     }
-    if (!['localhost', '127.0.0.1', '[::1]'].includes(location.hostname)) {
-      render([]);
-      return;
-    }
+    const local = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
     try {
-      const response = await fetch('/__student_gallery/gallery.json', { cache: 'no-store' });
+      let response = await fetch('./gallery/gallery.json', { cache: 'no-cache' });
+      if (response.status === 404 && local) {
+        response = await fetch('/__student_gallery/gallery.json', { cache: 'no-store' });
+      }
+      if (response.status === 404 && !local) {
+        render([]);
+        return;
+      }
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const { photos: entries } = await response.json();
-      render(entries.map(entry => ({
+      await render(entries.map(entry => ({
         src: new URL(entry.src, response.url).href,
         thumbnail: new URL(entry.thumbnail, response.url).href,
         alt: entry.alt,
       })));
     } catch (error) {
-      status.textContent = '无法读取本地照片，请使用图廊预览脚本启动网站。';
-      console.warn('本地照片读取失败', error);
+      status.textContent = local ? '无法读取本地照片，请使用图廊预览脚本启动网站。' : '团队影像暂时无法加载。';
+      console.warn('团队影像读取失败', error);
     }
   }
 

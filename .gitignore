@@ -2,3 +2,4 @@
 
 # Local gallery photos used for previews
 /imgs/student-gallery/
+/tools/__pycache__/

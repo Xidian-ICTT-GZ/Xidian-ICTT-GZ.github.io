@@ -1,0 +1,60 @@
+name: Deploy Xidian lab website
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/configure-pages@v5
+
+      - name: Prepare static site
+        run: |
+          mkdir -p _site/imgs
+          cp -a index.html people.html students.html publication.html news.html contact.html css js CNAME _site/
+          for path in imgs/*; do
+            if [[ "$path" != imgs/student-gallery ]]; then
+              cp -a -- "$path" _site/imgs/
+            fi
+          done
+
+      - name: Download and validate the latest published gallery
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          latest="$(gh api --paginate "repos/$GH_REPO/releases?per_page=100" --jq '
+            .[] | select(
+              (.tag_name | startswith("site-gallery-")) and (.draft | not)
+              and (.assets | any(.name == "student-gallery.zip" and .state == "uploaded"))
+            ) | "\(.published_at) \(.tag_name)"
+          ' | sort | tail -n 1)"
+          if [[ -n "$latest" ]]; then
+            tag="${latest#* }"
+            gh release download "$tag" --pattern 'student-gallery.zip' --dir "$RUNNER_TEMP"
+            python3 tools/publish_student_gallery.py --extract "$RUNNER_TEMP/student-gallery.zip" _site/gallery "$tag"
+          fi
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - uses: actions/deploy-pages@v4
+        id: deployment
