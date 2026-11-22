@@ -55,6 +55,7 @@ jobs:
           fi
 
       - uses: actions/upload-pages-artifact@v4
+        id: artifact
         with:
           path: _site
 
@@ -62,15 +63,46 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
+          ARTIFACT_ID: ${{ steps.artifact.outputs.artifact_id }}
         run: |
           for delay in 0 2 4 8 16; do
             sleep "$delay"
-            if [[ "$(gh api "repos/$GH_REPO/actions/runs/$GITHUB_RUN_ID/artifacts?name=github-pages" --jq '.total_count')" == 1 ]]; then
+            if gh api --silent "repos/$GH_REPO/actions/artifacts/$ARTIFACT_ID" 2>/dev/null; then
               exit 0
             fi
           done
           echo 'The uploaded Pages artifact did not become visible.' >&2
           exit 1
 
-      - uses: actions/deploy-pages@v4
+      - name: Deploy the uploaded artifact to GitHub Pages
+        uses: actions/github-script@v8
         id: deployment
+        timeout-minutes: 6
+        env:
+          ARTIFACT_ID: ${{ steps.artifact.outputs.artifact_id }}
+        with:
+          # Pass the known ID directly because deploy-pages did not list the uploaded artifact.
+          script: |
+            const { data: deployment } = await github.request('POST /repos/{owner}/{repo}/pages/deployments', {
+              ...context.repo,
+              artifact_id: Number(process.env.ARTIFACT_ID),
+              pages_build_version: context.sha,
+              oidc_token: await core.getIDToken(),
+            });
+            const failures = new Set([
+              'deployment_failed', 'deployment_perms_error', 'deployment_content_failed',
+              'deployment_cancelled', 'deployment_lost',
+            ]);
+            for (let attempt = 0; attempt < 60; attempt++) {
+              await new Promise(resolve => setTimeout(resolve, 5000));
+              const { data: { status } } = await github.request(
+                'GET /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}',
+                { ...context.repo, pages_deployment_id: deployment.id },
+              );
+              if (status === 'succeed') {
+                core.setOutput('page_url', deployment.page_url);
+                return;
+              }
+              if (failures.has(status)) throw new Error(`Pages deployment ended with ${status}.`);
+            }
+            throw new Error('Timed out waiting for the Pages deployment.');
