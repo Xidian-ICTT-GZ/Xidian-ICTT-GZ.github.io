@@ -11,6 +11,7 @@ from urllib.parse import quote
 
 SITE_ROOT = Path(__file__).resolve().parents[1]
 GALLERY_FOLDER = SITE_ROOT / "imgs/student-gallery"
+THUMBNAIL_VERSION = 2
 IMAGE_TYPES = {
     ".avif": "image/avif",
     ".gif": "image/gif",
@@ -36,18 +37,33 @@ def gallery_files(root):
                 yield path, metadata
 
 
+def write_sips_image(sips, source, destination, *options):
+    result = run(
+        [sips, *options, "-s", "format", "jpeg", "-s", "formatOptions", "82",
+         str(source), "--out", str(destination)],
+        stdout=DEVNULL, stderr=DEVNULL, check=False,
+    )
+    return result.returncode == 0 and destination.is_file()
+
+
 def write_thumbnail(source, destination, sips):
     try:
         from PIL import Image, ImageOps
     except ModuleNotFoundError:
         if not sips:
             return False
-        result = run(
-            [sips, "-Z", "720", "-s", "format", "jpeg", "-s", "formatOptions", "82",
-             str(source), "--out", str(destination)],
-            stdout=DEVNULL, stderr=DEVNULL, check=False,
-        )
-        return result.returncode == 0 and destination.is_file()
+        if source.suffix.lower() not in {".jpg", ".jpeg"}:
+            return write_sips_image(sips, source, destination, "-Z", "720")
+
+        # Re-encode camera JPEGs first. Direct sips scaling can produce black
+        # thumbnails when the source contains an auxiliary HDR image.
+        normalized = destination.with_suffix(".original.jpg")
+        try:
+            if not write_sips_image(sips, source, normalized):
+                return False
+            return write_sips_image(sips, normalized, destination, "-Z", "720")
+        finally:
+            normalized.unlink(missing_ok=True)
 
     try:
         with Image.open(source) as image:
@@ -71,7 +87,7 @@ def update_gallery():
     with TemporaryDirectory(dir=cache) as temporary:
         staging = Path(temporary)
         for path, metadata in gallery_files(GALLERY_FOLDER):
-            version = f"{path.relative_to(GALLERY_FOLDER)}:{metadata.st_mtime_ns}:{metadata.st_size}"
+            version = f"{THUMBNAIL_VERSION}:{path.relative_to(GALLERY_FOLDER)}:{metadata.st_mtime_ns}:{metadata.st_size}"
             name = hashlib.sha256(os.fsencode(version)).hexdigest() + ".jpg"
             thumbnail = cache / name
             if not thumbnail.is_file():

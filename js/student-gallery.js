@@ -8,14 +8,17 @@
   const dialogImage = dialog.querySelector('img');
   const originalLink = dialog.querySelector('a');
   const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const thumbnailObservers = [];
   let playing;
   let previewTimer;
 
-  const rowSizeObserver = new ResizeObserver(() => {
+  function updateDuration() {
     const widths = [...photos.children].map(row => row.firstElementChild.firstElementChild.getBoundingClientRect().width);
     // One common period gives every photo one pass per cycle, even when row sizes differ.
     gallery.style.setProperty('--gallery-duration', `${Math.max(...widths) / 42}s`);
-  });
+  }
+
+  const rowSizeObserver = new ResizeObserver(updateDuration);
 
   function closePreview() {
     clearTimeout(previewTimer);
@@ -23,7 +26,18 @@
     preview.removeAttribute('src');
   }
 
-  function showPreview(card, source) {
+  function showPhoto(image, photo) {
+    image.src = photo.thumbnail;
+    if (photo.src === photo.thumbnail) return;
+
+    const original = new Image();
+    original.src = photo.src;
+    original.decode().then(() => {
+      if (image.getAttribute('src') === photo.thumbnail) image.src = photo.src;
+    }, () => {});
+  }
+
+  function showPreview(card, photo) {
     const rect = card.getBoundingClientRect();
     const spaceOnRight = innerWidth - rect.right;
     const placeOnRight = spaceOnRight > rect.left;
@@ -38,14 +52,14 @@
       width: `${width}px`,
       height: `${height}px`,
     });
-    preview.src = source;
+    showPhoto(preview, photo);
     preview.hidden = false;
   }
 
   function openPhoto(photo) {
     closePreview();
     dialogImage.alt = photo.alt;
-    dialogImage.src = photo.src;
+    showPhoto(dialogImage, photo);
     originalLink.href = photo.src;
     dialog.showModal();
   }
@@ -55,7 +69,7 @@
     list.className = 'student-gallery-list';
     if (duplicate) list.setAttribute('aria-hidden', 'true');
 
-    for (const photo of pictures) {
+    for (const [index, photo] of pictures.entries()) {
       const item = document.createElement('li');
       const card = document.createElement('button');
       card.className = 'student-gallery-card';
@@ -65,16 +79,17 @@
 
       const image = document.createElement('img');
       image.addEventListener('error', () => { card.textContent = '查看原图'; }, { once: true });
-      image.src = photo.thumbnail;
       image.alt = '';
-      image.loading = pictures.length > 8 ? 'lazy' : 'eager';
+      // The two ends of each list can be visible when the loop starts.
+      image.loading = index < 7 || index >= pictures.length - 2 ? 'eager' : 'lazy';
       image.decoding = 'async';
       image.draggable = false;
+      image.src = photo.thumbnail;
       card.append(image);
       card.addEventListener('pointerenter', event => {
         if (event.pointerType !== 'mouse' || dialog.open) return;
         closePreview();
-        previewTimer = setTimeout(() => showPreview(card, photo.src), 300);
+        previewTimer = setTimeout(() => showPreview(card, photo), 160);
       });
       card.addEventListener('pointerleave', closePreview);
       card.addEventListener('click', () => openPhoto(photo));
@@ -84,13 +99,15 @@
     return list;
   }
 
-  function render(pictures) {
+  async function render(pictures) {
     closePreview();
     rowSizeObserver.disconnect();
+    for (const observer of thumbnailObservers.splice(0)) observer.disconnect();
     photos.replaceChildren();
+    gallery.classList.toggle('student-gallery-preparing', Boolean(pictures.length));
     photos.hidden = !pictures.length;
-    status.hidden = Boolean(pictures.length);
-    status.textContent = '暂无照片';
+    status.hidden = false;
+    status.textContent = pictures.length ? '正在加载照片…' : '暂无照片';
     toggle.hidden = true;
     if (!pictures.length) return;
 
@@ -100,7 +117,7 @@
       [shuffled[end], shuffled[selected]] = [shuffled[selected], shuffled[end]];
     }
 
-    const rowCount = Math.max(1, Math.min(3, Math.floor(shuffled.length / 2)));
+    const rowCount = Math.max(1, Math.min(4, Math.floor(shuffled.length / 2)));
     const rows = Array.from({ length: rowCount }, () => []);
     shuffled.forEach((photo, index) => rows[index % rowCount].push(photo));
     const smallestRow = Math.floor(shuffled.length / rowCount);
@@ -124,7 +141,32 @@
       row.append(track);
       photos.append(row);
       rowSizeObserver.observe(list);
+
+      const preload = new IntersectionObserver((entries, observer) => {
+        for (const { target, isIntersecting } of entries) {
+          if (!isIntersecting) continue;
+          target.loading = 'eager';
+          observer.unobserve(target);
+        }
+      }, { root: row, rootMargin: '0px 600px' });
+      for (const image of row.querySelectorAll('img[loading="lazy"]')) preload.observe(image);
+      thumbnailObservers.push(preload);
     });
+
+    updateDuration();
+    const visibleImages = [...photos.children].flatMap(row => {
+      const viewport = row.getBoundingClientRect();
+      return [...row.querySelectorAll('img')].filter(image => {
+        const bounds = image.getBoundingClientRect();
+        return bounds.right > viewport.left && bounds.left < viewport.right;
+      });
+    });
+    await Promise.allSettled(visibleImages.map(image => {
+      image.loading = 'eager';
+      return image.decode();
+    }));
+    status.hidden = true;
+    gallery.classList.remove('student-gallery-preparing');
   }
 
   async function loadGallery() {
